@@ -1,0 +1,7 @@
+print() and input() -> built-in function
+print() function    
+    -> it is used to get the output
+    -> it is used to display the specified message screen or other standard output device
+
+input() function
+    -> 

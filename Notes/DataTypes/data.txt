@@ -1,0 +1,46 @@
+Data Types
+    -> are the categoriztion or classification of data items
+    -> it represents the kind of value that tells what operations can be performed on a particular data 
+
+Built in - > Data Types
+    --> Numeric - Integer, Float and Complex
+    --> Sequence type -> String , list and tuple
+    --> Boolean 
+    --> Set
+    --> dict
+
+#Mutable object : mutable object can changes thier state or content
+#ex:: list ,dict , Set
+
+#Immutable object : can't change thier content or stateex 
+#ex int,floot,bool,str, tuple
+
+_____________________________________________________________________
+
+#List 
+    -> Mutable object
+    -> is a Sequence data type which is used to store collection of data
+    -> ordered
+List : []
+    collection of value (home)
+    it allow duplicate value 
+
+    #Data Types
+
+-----------------------------------------------
+# tuple ()
+    -> Immutable object
+    -> used to store the value
+    -> ordered 
+
+_____________________________________________________________________
+
+# String 
+    -> sequence of character
+    -> create a string using single ,double quote or for multiline statement we use """ """
+
+
+_____________________________________________________________________
+
+for name in country
+    in -> membership operator

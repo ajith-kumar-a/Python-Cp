@@ -1,0 +1,14 @@
+while
+    -> while loop is used to excute a block of statement repeatedly untill a given condition is satisfied
+    -> when the condition become false , the line immediately after the loopin th egiven progeam is excuted
+
+     #syntax
+        while(expression):
+            loop  body
+
+
+range() 
+    -> number of sequence
+    start -> default 0
+    stop  -> exclude
+    step  -> default 1

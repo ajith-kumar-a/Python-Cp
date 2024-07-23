@@ -1,0 +1,7 @@
+Set 
+    -> Collection of items
+    -> enclosed in {}
+    -> each element is seperated by ,
+    -> Unordered
+    -> Set is Mutable
+    -> this collection Stores Unique Value

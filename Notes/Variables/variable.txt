@@ -1,0 +1,13 @@
+Variables : 
+    -> containers to store the values
+    -> used to refer memory location
+    -> also known as the identifier
+    -> no need to declare variable before using them
+
+Keywords :
+    -> are the special reserved words that have a specific perpose
+
+id() - built in function
+    -> All object in python has its own unique id.
+    -> it is represented by an integer value
+    -> id() function returns the id of the specified object  where it stored
