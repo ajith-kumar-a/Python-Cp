@@ -28,6 +28,10 @@ def main():
         elif option == 4:
             num1,num2=  getNumberFromUser()
             print(f'Division of {num1} / {num2} =  {Division(num1,num2)}')
+        elif option == 5:
+            break
+        else:
+            continue
 
 
 def getNumberFromUser():

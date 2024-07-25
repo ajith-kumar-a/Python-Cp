@@ -1,0 +1,13 @@
+    -> map, filter and reduce are paradigms of functional programming
+    -> map and filter com built-in with python(built in function)
+    -> reduce , need to be imported as it resides in the functool module
+
+    -> Syntax
+        filter(function,iterable)
+        -> function : it tests if each element of a sequence true or not
+        -> Sequence : which need to be filtered , it can be list sets, tuples or containiners of any iterators
+
+    -> Lambda Function(Anonoymous Function) -> function without a name
+    -> this function can take any number of arguments but only one expression , which is evaluated and returned 
+
+    syntax : lambda arguments : expression
