@@ -1,0 +1,4 @@
+variable length argument:
+    -> allows a function to accepct a variable number of arguments 
+        1. Non - keyworded Arguments(*args)
+        2. Keyworded Arguments(**kwargs)

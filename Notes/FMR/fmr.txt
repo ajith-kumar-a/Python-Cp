@@ -11,3 +11,10 @@
     -> this function can take any number of arguments but only one expression , which is evaluated and returned 
 
     syntax : lambda arguments : expression
+
+    -> map() function return a map object(which is an iterators) of the result
+       after applying the given function to each item of a given iterable(list,tuples, etc....)
+       or allows you to process and transform all the items in an iterable
+       without using an explicit for loop , a technique commonly known as mapping
+    syntax
+        map(function,iterable,[iterable1,iterable2......])
