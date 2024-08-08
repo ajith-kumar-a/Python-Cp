@@ -9,7 +9,7 @@
 class User:
     def __init__(self):
 
-        self.emp_id=int(input('Enter empid : '))
+        self.__emp_id=int(input('Enter empid : '))
         self.first_name=input('Enter First Name : ')
         self.last_name=input('Enter Last Name : ')
         self.email=input('Enter Email : ')
@@ -22,14 +22,16 @@ class User:
     def greet_user(self):
         print(f'Hi {self.first_name}{self.last_name} Welcome To ChangePond')
 
+def main():
 
-Ajith = User()
+    Ajith = User()
+    Ajith.describe_user()
+    Ajith.greet_user()
 
 
-Ajith.describe_user()
-Ajith.greet_user()
+    Kumar = User()
+    Kumar.describe_user()
+    Kumar.greet_user()
 
-Kumar = User()
-
-Kumar.describe_user()
-Kumar.greet_user()
+if __name__ == "__main__":
+    main()

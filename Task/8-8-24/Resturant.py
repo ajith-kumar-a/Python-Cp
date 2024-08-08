@@ -26,10 +26,27 @@ class Resturant:
         print("Now The Resturant is OPEN")
 
 
+def main():
 
-r = Resturant()
-r.setValues("Ajith Resturant ","Indian Cuisine")
-print(r.getValues())
-Resturant.open_restaurant()
-r.describe_restaurant()
+    AjithResturant = Resturant()
+    AjithResturant.setValues("Ajith Resturant ","Indian Cuisine")
+    print(AjithResturant.getValues())
+    Resturant.open_restaurant()
+    AjithResturant.describe_restaurant()
 
+    KumarResturant = Resturant()
+    KumarResturant.setValues("Kumar Resturant ","Multi Cuisine")
+    print(KumarResturant.getValues())
+    Resturant.open_restaurant()
+    KumarResturant.describe_restaurant()
+
+
+    AjithKumarResturant = Resturant()
+    AjithKumarResturant.setValues("Ajith Kumar Resturant ","International Cuisine")
+    print(AjithKumarResturant.getValues())
+    Resturant.open_restaurant()
+    AjithKumarResturant.describe_restaurant()
+
+
+if __name__ == "__main__":
+    main()
