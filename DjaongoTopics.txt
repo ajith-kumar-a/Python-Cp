@@ -1,0 +1,9 @@
+
+
+django: urls and views 
+
+ models ,serializers                                 
+    admin                                                        
+    user                                                         
+    jwt                                                
+    https://jwt.io/

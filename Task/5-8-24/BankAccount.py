@@ -12,6 +12,12 @@
 
 class BankAccount:
     ROI = 10.5
+
+    @staticmethod 
+    def DisplayKYCInfo():
+        print(f'Submit you\'r Aadhar Card \nSubmit your\'r 2 Passport size photo \nSubmit you\'r Pan Details ')
+
+
     def __init__(self):
         self.Name = input("Enter User Name : ")
         self.__Amount = int(input('Enter Amount : '))
@@ -26,11 +32,18 @@ class BankAccount:
     def Withdraw(self):
         self.__Amount -= float(input("Enter The Withdraw Amount  : "))
 
+    def Withdraw(self,amt):
+        self.__Amount -= amt
+
+    def Deposit(self,amt):
+         self.__Amount += amt
+
     def CalculateIntrest(self):
         intrest = (BankAccount.ROI * self.__Amount) /100
         return intrest
     
 def main():
+    BankAccount.DisplayKYCInfo()
     ajith = BankAccount()
     ajith.Deposit()
     ajith.Display()
