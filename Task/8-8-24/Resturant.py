@@ -34,6 +34,9 @@ def main():
     Resturant.open_restaurant()
     AjithResturant.describe_restaurant()
 
+
+# 9.2 
+
     KumarResturant = Resturant()
     KumarResturant.setValues("Kumar Resturant ","Multi Cuisine")
     print(KumarResturant.getValues())
