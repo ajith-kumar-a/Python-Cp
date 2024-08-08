@@ -19,6 +19,7 @@ class User:
     def describe_user(self):
         print(f'User details \nEmpid \t: {self.__emp_id} \nFirst_name \t: {self.first_name} \nLast_Name \t: {self.last_name} \nEmail \t: {self.email}  \nPhone \t: {self.phone_num} \nAddress \t: {self.address}')
    
+    @staticmethod
     def greet_user(self):
         print(f'Hi {self.first_name}{self.last_name} Welcome To ChangePond')
 
@@ -26,12 +27,12 @@ def main():
 
     Ajith = User()
     Ajith.describe_user()
-    Ajith.greet_user()
+    User.greet_user()
 
 
     Kumar = User()
     Kumar.describe_user()
-    Kumar.greet_user()
+    User.greet_user()
 
 if __name__ == "__main__":
     main()
