@@ -22,8 +22,6 @@ class Number:
         
         num = self.value
         for i in range(2,int(self.value+1)):
-            if i == 0 or i == 1:
-                continue
             
             if num % i == 0:
                 count += 1
