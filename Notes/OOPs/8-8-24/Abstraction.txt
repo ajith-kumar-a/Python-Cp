@@ -1,0 +1,7 @@
+    ->'ABC' --> Abstract Base Class, is Used for creating Abstract Classes
+    -> An Abstract Class is a class that cannot be instantiated and is design to be a base class for other Classes
+    -> Common Interface for a group for a subclassess
+
+
+
+Class MyAbstractClass(ABC)
