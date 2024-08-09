@@ -31,7 +31,9 @@ Python Package index(PyPi)
 
  ______________________________________________________________________________________________________________________________
 
-
+ step 1 :   django-admin startproject schedule
+ step 2 :   cd schedule
+ step 3 :   django-admin startapp month
 
 
  step - 1 : pip install virtualenvwrapper-win
@@ -48,3 +50,41 @@ Python Package index(PyPi)
 
 Create a Django App :
     -> python manage.py startapp myapp
+
+
+
+Django makes use of a directory structure to arrange different parts of the web application
+>schedule
+  schdedule -->  __init__.py
+               settings.py
+               urls.py
+               wsgi.py
+          asgi.py
+       manage.py
+manage.py : 
+->command-line utility for our project
+->the file contains the code for running the server,makemigrations ... and several commands
+->it lets you to interact with your project
+
+settings.py :
+    -> typically used to store configuration information in django
+    -> default database is set here
+ 
+__init__.py 
+    -> empty file, function of this file tells python interpreter that is directory ha Package
+
+urls.py :
+    -> used to provide you the address of the particular Package
+
+wsgi.py (web server gateway interface)
+    -> it is the way how servers interact with the applications
+    asgi.py()
+
+
+ step 1:     mkvirtualenv myproject
+ step 2 :    pip install django
+ step 3 :    django-admin startproject schedule
+ step 4 :    cd schedule
+ step 5 :    django-admin startapp month
+
+ step 6 : deactive
