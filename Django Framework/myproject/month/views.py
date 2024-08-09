@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,reverse
 from django.http import *
 # Create your views here.
 
@@ -14,9 +14,10 @@ def monthly_details_num(request,month):
     if (month > len(months)):
         return HttpResponseNotFound('Request is Not Found')
     else:
-        month_key = months[month]
+        redirect_month = months[month-1]
     # month_text = month_schedule[month_key]
-        return HttpResponseRedirect('/month/'+month_key)
+        redirect_path = reverse('month-detail',args=[redirect_month])
+        return HttpResponseRedirect(redirect_path)
 
 
 def monthly_details(request,month):
