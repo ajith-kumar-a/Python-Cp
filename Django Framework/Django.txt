@@ -87,4 +87,68 @@ wsgi.py (web server gateway interface)
  step 4 :    cd schedule
  step 5 :    django-admin startapp month
 
- step 6 : deactive
+ step 6 : deactivate
+
+ mkvirtualenv mysite
+
+using xampp server
+    Step: 1 – Xammp server create database
+
+    Step 2 – In the environment where you have install Django
+
+    (in the same environment pip install mysqlclient ==2.2.0)
+
+    Step 3 – create a project
+
+    Step 4 – settings.py
+
+    DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.mysql',
+
+        'NAME': 'bookmanagement',
+
+        'PORT': '3306',
+
+        'USER': 'root',
+
+        'PASSWORD':'',
+
+        'HOST':'localhost'
+
+    }
+
+    }
+
+    Write connectivity code
+
+    Step5 : py manage.py migrate
+
+    Step6: Install app : ‘author’
+
+    Step7 : Django-admin startapp author
+
+    Step8 : models.py structure
+
+    Step 9: makemigrations and migrate
+
+
+    ______________________________________________________________________________________________________________________________
+
+[16:42] Kasturi (Guest)
+    (urls) E:\DjangoCh\bookstore>py manage.py shell
+
+    Python 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)] on win32
+
+    Type "help", "copyright", "credits" or "license" for more information.
+
+    (InteractiveConsole)
+
+    >>> from author.models import Author
+
+    >>> Author.objects.all()
+
+    <QuerySet []>
+    kas = Author.objects.create(first_name='Chetan',last_name='Bhagat',age=34)
