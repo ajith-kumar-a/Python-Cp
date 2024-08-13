@@ -26,3 +26,8 @@ def week_details_num(request,week):
     week_day = week_day_list[week-1]
     week_day = reverse('week_detail',args=[week_day])
     return HttpResponseRedirect(week_day)
+
+def index(request):
+    week_list = list(week_days.keys())
+
+    return render(request,)

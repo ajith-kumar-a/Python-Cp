@@ -1,6 +1,6 @@
 from django.shortcuts import render,reverse
 from django.http import *
-from django.template.loader import render_to_string
+from django.templete.loader import render_to_string
 # Create your views here.
 
 month_schedule = {
@@ -24,22 +24,13 @@ def monthly_details_num(request,month):
 def monthly_details(request,month):
     try:
         month_text = month_schedule[month]
-        # responce_data = render_to_string('month_details/month.html')
-        responce_data = render(request,'month_details/month.html',{
-            'text':month_text,
-            'mon':month.upper()
-
-        })
-        return HttpResponse(responce_data)
+        responce_data = render_to_string('month_details')
+        return HttpResponse(f'<h1>{month_text}</h1>')
     except:
         return HttpResponseNotFound('This is not Mentioned')
 
 def index(request):
-    month = list(month_schedule.keys())
-
-    return render(request,'month_details/index.html',{
-            'month':month
-    })
+    return HttpResponse("This Works!")
 
 def ajith(request):
-    return HttpResponseGone("My name is ajith")
+    return HttpResponse("My name is ajith")

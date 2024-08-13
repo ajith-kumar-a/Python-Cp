@@ -151,4 +151,86 @@ using xampp server
     >>> Author.objects.all()
 
     <QuerySet []>
-    kas = Author.objects.create(first_name='Chetan',last_name='Bhagat',age=34)
+
+    for create: 
+        kas = Author.objects.create(first_name='Chetan',last_name='Bhagat',age=34)
+
+    Update :
+         from author.models import Author
+        >>> Author.objects.all()
+        <QuerySet [<Author: jk and Rowling>, <Author: Chetan and Bhagat>]>
+        >>> jk = Author.objects.all()[0]
+        >>> jk.first_name
+        'jk'
+        >>> jk.city='Pune'
+        >>> jk.city
+        'Pune'
+        >>> jk.rating =2
+        >>> jk.rating
+        2
+        >>> jk.save()
+
+    Filter : 
+        author.objects.get(rating=2) 
+        <author: Full Name :  Ajith and Avudayappan>
+
+        [10:30] Kasturi (Guest)
+        >>> from author.models import Author
+        >>> Author.objects.all()
+        <QuerySet [<Author: Author object (1)>, <Author: Author object (2)>]>
+        >>>
+        >>> Author.objects.get(rating=2)
+        <Author: jk and Rowling>
+        >>> Author.objects.filter(city='Pune')
+        <QuerySet [<Author: jk and Rowling>, <Author: Chetan and Bhagat>]>
+        >>>>>> Author.objects.filter(city='Pune',rating=2)
+        <QuerySet [<Author: jk and Rowling>]>
+        >>>
+        
+        [10:31] Kasturi (Guest)
+        >>>> Author.objects.filter(rating__lt=4)
+        <QuerySet [<Author: jk and Rowling>]>
+        >>> Author.objects.filter(rating__gt=4)
+        <QuerySet [<Author: Chetan and Bhagat>]>
+        >>>
+    
+    Q Condition :
+        -> from django.db.models import Q
+        ->  author.objects.filter(Q(rating__lt=3) | Q(city = 'Chennai')) 
+        ->  author.objects.filter(Q(rating__lt=3) & Q(city = 'Chennai')) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________________________________________________________________________________________________
+
+Documentations :
+    -> https://docs.djangoproject.com/en/5.1/topics/templates/
+    -> https://docs.djangoproject.com/en/5.0/ref/templates/builtins/
