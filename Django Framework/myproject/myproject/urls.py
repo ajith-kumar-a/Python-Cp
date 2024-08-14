@@ -23,3 +23,4 @@ urlpatterns = [
     path('week/',include('week.urls')),
     path('author/',include('author.urls')),
 ]
+# 

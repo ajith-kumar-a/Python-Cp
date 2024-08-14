@@ -202,7 +202,12 @@ using xampp server
 
 
 
-
+Templates:
+    Step: 1 Installed App : Write the App name
+    Or
+    DIR=[
+    BASE_DIR / ‘Appname’ / ‘templates’
+    ]
 
 
 

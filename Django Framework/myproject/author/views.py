@@ -13,12 +13,16 @@ for auth in Author_name:
 
 def index(request):
     auth_name = list(auth_dict.keys())
-    return render(request,'author_details/index.html',
+    return render(request,'author/index.html',
                   {
                       'author' : auth_name,
 
                   })
 
+
+def Author_details_id(request,author_id):
+    try:
+        
 
 
 def Author_details(request,author):
@@ -26,7 +30,7 @@ def Author_details(request,author):
     try:        
         author_detail = auth_dict[author]
        
-        responce_data = render(request,'author_details/auth.html',{
+        responce_data = render(request,'author/auth.html',{
             'text':author_detail,
         })
         return HttpResponse(responce_data)
