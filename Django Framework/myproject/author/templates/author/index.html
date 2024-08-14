@@ -6,7 +6,7 @@
 <ul>
     <h1> Author Details </h1>
     {% for auth in author %}
-        <li><h2><a href='{% url "author-detail"  auth %}''>{{auth}}</a> </h2></li>
+        <li><h2><a href='{% url "author-detail"  auth.slug %}''>{{auth.first_name}}</a> </h2></li>
     {% endfor %} 
 
 

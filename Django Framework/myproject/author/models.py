@@ -23,3 +23,4 @@ class author(models.Model):
     def __str__(self):
         return f'Author Details : -->   Full Name :  {self.first_name}  {self.last_name} ,  AGE : {self.age}  , City : {self.city} , Rating : {self.rating}'
  
+ 
