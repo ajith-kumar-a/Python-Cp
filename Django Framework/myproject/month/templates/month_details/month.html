@@ -1,19 +1,27 @@
 
 {% extends 'base.html' %}
+{% load static %}
+
 {% block page_title %} {{mon}} {% endblock %}
 {% block style %} 
 
-<style>
+<!-- <style>
     b{
         color: blue;
     }
     i{
         color: red;
     }
-</style>
+</style> -->
+<link rel = 'stylesheet' href = {% static 'style.css' %} >
+
 
 {% endblock %}
+
+
 {% block content %}
+{% include  "month_details/includes/header.html" %}
+
 
     <h2>In This <b>'{{mon}}'</b> We <i>'{{text}}'</i></h2>
     {% endblock %}

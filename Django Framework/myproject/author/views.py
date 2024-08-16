@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . models import author
 from django.http import *
+from django.db.models import Avg
 
 # Create your views here.
 
@@ -12,11 +13,14 @@ for auth in Author_name:
 
 
 def index(request):
-    auth_name = author.objects.all()
+    auth_name = author.objects.all().order_by('first_name')
+    auth_count = auth_name.count()
+    auth_rating_Avg =  author.objects.aggregate(Avg("rating", default=0))
     return render(request,'author/index.html',
                   {
                       'author' : auth_name,
-
+                      'auth_count':auth_count,
+                      'auth_rating_Avg' : auth_rating_Avg['rating__avg']
                   })
 
 

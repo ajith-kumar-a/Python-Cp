@@ -36,7 +36,8 @@ Python Package index(PyPi)
  step 3 :   django-admin startapp month
 
 
- step - 1 : pip install virtualenvwrapper-win
+______________________________________________________________________________________________________________________________
+ step - 1 : pip install virtualenvwrapper-win  -> it is used to giving the command for creating environment 
 
  step - 2 : mkvirtualenv myproject
 

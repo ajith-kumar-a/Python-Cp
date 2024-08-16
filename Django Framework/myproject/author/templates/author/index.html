@@ -1,15 +1,26 @@
+
 {% extends 'base.html' %}
+{% load static %}
+
 {% block page_title %} Author Details  {% endblock %}
 
-{% block style %} {% endblock %}
+{% block style %}
+
+{% endblock %}
+
+{% block CssFilePage %} 
+<link rel = 'stylesheet' href = {% static 'index.css' %} >
+
+{% endblock %}
+
 {% block content %}
 <ul>
     <h1> Author Details </h1>
     {% for auth in author %}
         <li><h2><a href='{% url "author-detail"  auth.slug %}''>{{auth.first_name}}</a> </h2></li>
     {% endfor %} 
-
-
+    <h5> Total Author Available : {{auth_count}}</h5>
+   <h5>avg ratings =  {{auth_rating_Avg}}</h5>
 </ul>
 
 

@@ -42,4 +42,4 @@ def index(request):
     })
 
 def ajith(request):
-    return HttpResponseGone("My name is ajith")
+    return HttpResponseGone("My name is Ajith")
