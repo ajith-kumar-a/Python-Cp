@@ -27,42 +27,21 @@ IEXCEL COMMUNITY FOUNDATION creates a platform for underprivileged communities t
 
 <div class="container mt-5">
   <div class="row">
- 
+    {% for user in users %} 
+
     <div class="col-md-4 mb-4">
       <div class="card">
         <img src="" class="card-img-top" alt="{{ user1.img_title }}">
         <div class="card-body">
           <h5 class="card-title">{{ user1.content }}</h5>
           <p class="card-text">{{ user1.read_more }}</p>
-          <a href="#" class="btn btn-primary">read more..</a>
+          <a href='{% url "user-detail"  user.id %}' class="btn btn-primary">read_more</a>
         </div>
       </div>
     </div>
  
     
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="" class="card-img-top" alt="{{ user3.img_title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ user3.content }}</h5>
-          <p class="card-text">{{ user3.read_more }}</p>
-          <a href="#" class="btn btn-primary">read more..</a>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="" class="card-img-top" alt="{{ user2.img_title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ user2.content }}</h5>
-          <p class="card-text">{{ user2.read_more }}</p>
-          <a href="#" class="btn btn-primary">read more..</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    {% endfor %} 
 
 
 </div>

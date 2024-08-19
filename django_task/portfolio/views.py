@@ -17,23 +17,24 @@ def get_date(post):
 #     }
 #     )
 
+
 def landing_page(request):
-    portfolio = portfolio_detail.objects.all()
-    print(portfolio)
-    user1=portfolio_detail.objects.get(id=1)
-    user2=portfolio_detail.objects.get(id=2)
-    user3=portfolio_detail.objects.get(id=3)
-
-
-
+    portfolio = portfolio_detail.objects.all().order_by('-id')[:3]
+    
+    portfolio = portfolio[::-1]
+    
+    user1 = portfolio[0] if len(portfolio) > 0 else None
+    user2 = portfolio[1] if len(portfolio) > 1 else None
+    user3 = portfolio[2] if len(portfolio) > 2 else None
+    
     context = { 
         "data" : ['1', '2', '3'], 
-      
+        'users' : portfolio,
         'user1' : user1,
         'user2' : user2,
         'user3' : user3,
     } 
-    return render(request,'portfolio/landing_page.html',context)
+    return render(request, 'portfolio/landing_page.html', context)
 
 def all_post(request):
 
