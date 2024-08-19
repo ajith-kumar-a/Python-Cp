@@ -7,15 +7,6 @@ from django.http import *
 
 def get_date(post):
     return post['date']
- 
-# # Create your views here.
-# def starting_page(request):
-#     sorted_posts=sorted(all_posts,key=get_date)
-#     latest_posts = sorted_posts[-3:]
-#     return render(request,"Blog/index.html",{
-#         "posts":latest_posts
-#     }
-#     )
 
 
 def landing_page(request):
@@ -43,6 +34,9 @@ def all_post(request):
         "data" : [1, 2, 3,4,5,6,7,8], 
         'users' : user
     } 
+    i=portfolio_detail.objects.get(id=9)
+
+    print(i.img_title)
 
     return render(request,'portfolio/all_post.html',context)
 

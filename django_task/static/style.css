@@ -16,3 +16,9 @@ body {
     align-items: center;
     color: blue;
 }
+
+.element {
+    max-width: fit-content;
+    margin-inline: auto;
+}
+  

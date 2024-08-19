@@ -1,53 +1,68 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block page_title %} Author Details  {% endblock %}
+{% block page_title %} Home {% endblock %}
 
-{% block style %}
-    
+
+{% block CssFilePage %}
+<link rel = 'stylesheet' href = {% static 'index.css' %} >
+<link rel = "icon" href ="/media/images/ak.jpg" >
 
 {% endblock %}
 
-{% block CssFilePage %}
-
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
+{% block header %}
+  {% include  "portfolio/includes/header.html" %}
 {% endblock %}
 
 {% block content %}
 
-<p>
-<b>Introduction</b>: iExcel Community Foundation is a Non-government company and is registered at Registrar of Companies, Pune
-IEXCEL COMMUNITY FOUNDATION creates a platform for underprivileged communities through thought process development, skill building, employment and entrepreneurship opportunities pan India.
-</p>
+<h2>Intro About Ajith Kumar  </h2> 
 
-<a href='{% url "all-post" %}'><h2>Latest Post</h2></a>
 
+<div class="row mt-3 mb-5">
+  <div class="col-md-12">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">World</strong>
+        <h3 class="mb-0">Featured post</h3>
+        <div class="mb-1 text-muted">Nov 12</div>
+        <div class = "p-4"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Hi, I'm <strong> Ajith Kumar </strong>, a software developer with a strong background in both frontend and backend technologies. Currently, I'm pursuing an M.Tech in Cybersecurity, which complements my technical skills and broadens my understanding of secure development practices.
+
+          In the realm of frontend development, I have experience with HTML and CSS, and I'm proficient in modern frameworks like React and Angular. These tools enable me to build responsive, user-friendly interfaces that enhance the overall user experience.
+          
+          On the backend, I work with Java and Python, leveraging their robust frameworks and libraries to develop scalable and efficient server-side solutions. My experience also extends to middleware technologies, where I manage databases with MySQL and PostgreSQL, ensuring data integrity and optimal performance.
+          
+          With this diverse skill set, I am passionate about creating innovative solutions and continuously improving my technical expertise to address complex challenges in the software development landscape.
+          </div>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="/media/images/ajith.jpg" class = "p-2" width="450" height="440" >
+
+      </div>
+    </div>
+  </div>
+
+
+<h2 class = "element">Latest Post</h2>
 
 <div class="container mt-5">
   <div class="row">
     {% for user in users %} 
-
     <div class="col-md-4 mb-4">
       <div class="card">
-        <img src="" class="card-img-top" alt="{{ user1.img_title }}">
+        <!-- Rounded corners with Bootstrap utility class -->
+        <img src="{{ user.img_url.url }}" class="card-img-top custom-image-size" alt="{{ user.img_title }}">
         <div class="card-body">
-          <h5 class="card-title">{{ user1.content }}</h5>
-          <p class="card-text">{{ user1.read_more }}</p>
-          <a href='{% url "user-detail"  user.id %}' class="btn btn-primary">read_more</a>
+          <p class="card-text"><b>{{ user.content }}</b></p>
+          <a href="{% url 'user-detail' user.id %}" class="btn btn-primary">Read More</a>
         </div>
       </div>
     </div>
- 
-    
-    {% endfor %} 
-
-
+    {% endfor %}
+  </div>
 </div>
 
 
-</div>
 
 
 {% endblock %}

@@ -1,42 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block page_title %} Author Details  {% endblock %}
+{% block page_title %} All Post  {% endblock %}
 
-{% block style %}
-<style>
-  
-</style>
+{% block CssFilePage %} 
+
+  <link rel = 'stylesheet' href = {% static 'index.css' %} >
+  <link rel = "icon" href ="/media/images/ak.jpg" >
 
 {% endblock %}
 
-{% block CssFilePage %}
-
-{% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
+{% block header %}
+  {% include  "portfolio/includes/header.html" %}
 {% endblock %}
 
 {% block content %}
 
 
-<a><h2>Latest Post</h2></a>
+
+<a><h2 class = "element">All Post</h2></a>
 <div class="container mt-5">
   <div class="row">
-  {% for user in users %} 
-  <div class="col-md-4 mb-4">
-    <div class="card">
-        <img src="" class="card-img-top" alt="{{ user.img_title }}">
+    {% for user in users %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ user.img_url.url }}" class="card-img-top custom-image-size " alt="{{ user.img_title }}">
         <div class="card-body">
-            <h5 class="card-title">{{ user.content }} TITLE</h5>
-            <p class="card-text">{{ user.read_more }} DESC</p>
-            <a href='{% url "user-detail"  user.id %}' class="btn btn-primary">read_more</a>
+          <h5 class="card-title">{{ user.content }} </h5>
+          <p class="card-text">{{ user.read_more|truncatewords:20 }} </p>
+          <a href="{% url 'user-detail' user.id %}" class="btn btn-primary">Read More</a>
         </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
-  {% endfor %} 
-</div>
-</div>
+
+
 
 
 {% endblock %}
