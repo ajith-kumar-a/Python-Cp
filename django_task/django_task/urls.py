@@ -1,5 +1,5 @@
 """
-URL configuration for myproject project.
+URL configuration for django_task project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -19,9 +19,12 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('month/', include('month.urls')),
-    path('week/',include('week.urls')),
-    path('author/',include('author.urls')),
-    path('',include('form_tab.urls')),
+    path('', include('portfolio.urls')),
 ]
-# 
+
+
+
+# yes mam but iam not add photo 
+# and css
+
+# yes mam

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block page_title %} Author Details  {% endblock %}
+
+{% block style %}
+    
+
+{% endblock %}
+
+{% block CssFilePage %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% endblock %}
+
+{% block content %}
+
+<p>
+<b>Introduction</b>: iExcel Community Foundation is a Non-government company and is registered at Registrar of Companies, Pune
+IEXCEL COMMUNITY FOUNDATION creates a platform for underprivileged communities through thought process development, skill building, employment and entrepreneurship opportunities pan India.
+</p>
+
+<a href='{% url "all-post" %}'><h2>Latest Post</h2></a>
+
+
+<div class="container mt-5">
+  <div class="row">
+ 
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="" class="card-img-top" alt="{{ user1.img_title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ user1.content }}</h5>
+          <p class="card-text">{{ user1.read_more }}</p>
+          <a href="#" class="btn btn-primary">read more..</a>
+        </div>
+      </div>
+    </div>
+ 
+    
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="" class="card-img-top" alt="{{ user3.img_title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ user3.content }}</h5>
+          <p class="card-text">{{ user3.read_more }}</p>
+          <a href="#" class="btn btn-primary">read more..</a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="" class="card-img-top" alt="{{ user2.img_title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ user2.content }}</h5>
+          <p class="card-text">{{ user2.read_more }}</p>
+          <a href="#" class="btn btn-primary">read more..</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

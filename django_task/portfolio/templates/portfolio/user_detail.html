@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block page_title %} Author Details  {% endblock %}
+
+{% block style %}
+<style>
+  
+</style>
+
+{% endblock %}
+
+{% block CssFilePage %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<a><h2>Latest Post</h2></a>
+<div class="container mt-5">
+  <div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="card">
+        <img src="" class="card-img-top" alt="{{ text.img_title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ text.content }} TITLE</h5>
+            <p class="card-text">{{ text.first_name }} </p>
+            <p class="card-text">{{ text.last_name }} </p>
+            <p class="card-text"> date {{ text.event_date }} </p>
+            <p class="card-text"> time {{ text.event_date }} </p>
+            <p class="card-text">{{ text.read_more }} </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
