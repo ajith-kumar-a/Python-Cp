@@ -5,14 +5,20 @@ html{
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f7eded;
+    margin: 10;
+    padding: 10;
+    background-color: #1f1a1a ;
     font-size: 40;
+    padding: 20px;
 
 }
 
 .author{
     align-items: center;
     color: blue;
+}
+
+.renderImg{
+        border-radius: 38px !important;
+        padding: 18px !important;
 }

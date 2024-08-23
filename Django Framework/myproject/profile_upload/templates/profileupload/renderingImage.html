@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block page_title %}  Details  {% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+      {% for renderImg in renderingimg %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{{renderImg.userimage.url}}" class="card-img-top custom-image-size renderImg" alt="{{renderImg.userimage.url}}">
+          <div class="card-body">
+            
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'author',
     'month',
     'week',
-    'form_tab'
+    'form_tab',
+    'bootstrap5',
+    'widget_tweaks',
+    'profile_upload',
 ]
 
 MIDDLEWARE = [
@@ -134,10 +137,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    
+    BASE_DIR / 'static',
+
     BASE_DIR / 'author'/'static',
-    BASE_DIR / 'static'
+    BASE_DIR / 'static'/'css'
 ]
+
+MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/user-media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

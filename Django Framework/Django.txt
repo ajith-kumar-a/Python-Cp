@@ -43,7 +43,7 @@ ________________________________________________________________________________
 
  step - 3 : workon myproject
 
- step - 4 : pip install django
+ step - 4 : pip install django or pip install -r req.txt
 
  step - 5 : cd myproject
 
@@ -215,6 +215,15 @@ Templates:
 
 
 
+Base View
+Generic Display Views:
+TemplateView
+DetailView
+ListView
+Generic Editing Views:
+CreateView
+UpdateView
+DeletView
 
 
 
@@ -222,8 +231,8 @@ Templates:
 
 
 
-
-
+______________________________________________________________________________________________________________________________
+cardinality = relationship like one to one , one to many 
 
 
 
@@ -240,3 +249,87 @@ ________________________________________________________________________________
 Documentations :
     -> https://docs.djangoproject.com/en/5.1/topics/templates/
     -> https://docs.djangoproject.com/en/5.0/ref/templates/builtins/
+    -> https://docs.djangoproject.com/en/5.1/topics/class-based-views/
+
+    -> https://pypi.org/project/drf-yasg/#c-swagger-settings-and-redoc-settings
+    -> https://www.django-rest-framework.org/
+
+______________________________________________________________________________________________________________________________
+
+Application Programming Interface(API)
+
+An API is a software intermediary that allows two or more application to talk to each other.
+
+    API :
+        Private: It can be used within the organization
+        Partner : It can be used within Bussiness Partners
+        Public : It can be used any third party developers
+ 
+WEB API:
+    An API, which is interface for web is called as web API (request and response)
+
+    How web API works:
+        Client makes HTTP request to API
+        API will communicate to web application/Database
+        API returns Data to client
+    
+REST:
+    Architectural guideline to develop web API
+    API developed using REST is known as REST API/RESTful API
+
+    API :
+        API is nothing but URL which we can integrate into any frontend application
+        when we hit the url along with some parameters and request method then it will return expected response
+
+CRUD OPERATIONs:
+    GET METHOD : To fetch the data(Http request method)
+    POST: To add the data
+    GET(id) :Specific data fetch
+    PUT: To update all fields
+    PATCH : To update sepcific field
+    DELETE : Specific field delete
+ 
+React(axios)
+
+
+drf-yasg 1.21.7
+Automated generation of real Swagger/OpenAPI 2.0 schemas from Django Rest Framework code.
+settings.py
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+       'basic': {
+           'type': 'basic'
+       }
+   },
+   ...
+}
+In settings.py:
+INSTALLED_APPS = [
+   ...
+   'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+   'drf_yasg',
+   ...
+­­­­
+Urls.py
+from django.contrib import admin
+from django.urls import path
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+ 
+schema_view = get_schema_view(
+  openapi.Info(
+     title="Book API",
+     default_version='v1',
+     description="About Bookstore which will perform CRUD",
+     terms_of_service="https://127.0.0.1:8000/",
+     contact=openapi.Contact(email="kpbagde@gmail.com"),
+     license=openapi.License(name="BSD License"),
+  ),
+  public=True,
+#    permission_classes=(permissions.AllowAny,),
+)
+ 
+urlpatterns = [
+   path('admin/', admin.site.urls),
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+]
