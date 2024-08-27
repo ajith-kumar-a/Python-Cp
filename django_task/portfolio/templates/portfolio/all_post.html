@@ -29,14 +29,13 @@
           <h5 class="card-title">{{ user.content }} </h5>
           <p class="card-text">{{ user.read_more|truncatewords:20 }} </p>
           <a href="{% url 'user-detail' user.id %}" class="btn btn-primary">Read More</a>
+          <!-- Update this button in your post listing template -->
+          <a href="{% url 'add-comment' %}?post_id={{ user.id }}" class="btn btn-secondary">Add Comment</a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
-
-
-
 
 {% endblock %}

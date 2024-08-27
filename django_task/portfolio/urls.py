@@ -9,5 +9,6 @@ urlpatterns = [
     path('<int:id>', views.user_details_id,name='user-detail'),
 
     path('all-post', views.all_post,name='all-post'),
+    path('add-comment', views.AddComment.as_view(),name='add-comment'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

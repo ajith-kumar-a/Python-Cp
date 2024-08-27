@@ -55,6 +55,8 @@
         <div class="card-body">
           <p class="card-text"><b>{{ user.content }}</b></p>
           <a href="{% url 'user-detail' user.id %}" class="btn btn-primary">Read More</a>
+          <a href="{% url 'add-comment' %}?post_id={{ user.id }}" class="btn btn-secondary">Add Comment</a>
+
         </div>
       </div>
     </div>

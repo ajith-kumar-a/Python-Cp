@@ -40,7 +40,28 @@
     </div>
 </div>
 </div>
-</div>
 
+
+<br>
+
+
+
+<figure class="text-center">
+  <b>Comment Section  </b>
+
+  {% for comment in comments %}
+  {% if comment.post_id == text.id %}
+
+  <blockquote class="blockquote">
+    <p>{{comment.user_name}}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title"> {{comment.comment}}</cite>
+  </figcaption>
+  {% endif %}
+
+  {% endfor %}
+
+</figure>
 
 {% endblock %}
