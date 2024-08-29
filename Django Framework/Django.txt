@@ -254,6 +254,9 @@ Documentations :
     -> https://pypi.org/project/drf-yasg/#c-swagger-settings-and-redoc-settings
     -> https://www.django-rest-framework.org/
 
+    -> https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
+    -> https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html
+
 ______________________________________________________________________________________________________________________________
 
 Application Programming Interface(API)
