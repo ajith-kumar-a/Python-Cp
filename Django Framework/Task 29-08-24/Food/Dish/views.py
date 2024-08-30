@@ -6,12 +6,17 @@ from rest_framework.exceptions import APIException
 from rest_framework.response import Response
 from rest_framework import status,parsers
 from rest_framework.decorators import action
-
+from rest_framework import permissions
+from rest_framework_simplejwt.authentication import JWTAuthentication
+# Create your views here.
+ 
 
 class DishViewset(ModelViewSet):
     queryset = DishModel.objects.all()
     serializer_class = DishSerializer
     parser_classes = (parsers.FormParser,parsers.MultiPartParser,parsers.FileUploadParser)
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
         if self.action == 'list':

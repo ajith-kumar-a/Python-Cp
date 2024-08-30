@@ -13,6 +13,8 @@
                href="{% url 'landing-page' %}">Home</a>
             <a class="nav-item nav-link {% if request.path == '/all-post' %}active fw-bolder{% endif %}"
                href="{% url 'all-post' %}">All Post</a>
+            <a class="nav-item nav-link {% if request.path == '/add-post' %}active fw-bolder{% endif %}"
+               href="{% url 'add-post' %}">Add Post</a>
             <a class="nav-item nav-link disabled"
                href="#">About us</a>
             <a class="nav-item nav-link disabled"

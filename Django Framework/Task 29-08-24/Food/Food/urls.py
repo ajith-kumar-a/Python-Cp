@@ -22,6 +22,11 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf import settings
 from django.conf.urls.static import static
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 
 
@@ -45,6 +50,8 @@ urlpatterns = [
     path('api/dish',include('Dish.urls')),
     path('api/category',include('Category.urls')),
     path('api/user',include('user.urls')),
+    path('api/token/',swagger_auto_schema(method='post',security=[])(TokenObtainPairView.as_view()),name='token_obtain_pair'),
+    path('api/token/refresh/',swagger_auto_schema(method='post',security=[])(TokenRefreshView.as_view()),name='token_refresh')
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 

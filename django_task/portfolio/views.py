@@ -50,8 +50,27 @@ def user_details_id(request,id):
     
     return render(request,'portfolio/user_detail.html',context)
 
+def user_details_slug(request, slugs):
+    # Fetch the portfolio_detail object, or return a 404 if not found
+    user = get_object_or_404(portfolio_detail, full_name=slugs)
+    
+    # Fetch comments related to the specific portfolio_detail object
+    comments = Comment.objects.filter(post=user)
+    
+    context = { 
+        'text': user,
+        'comments': comments
+    } 
+    
+    return render(request, 'portfolio/user_detail.html', context)
 
+class AddPost(CreateView):
+    model = portfolio_detail
+    template_name = "portfolio/add_post.html"
+    success_url = reverse_lazy('all-post')  # Redirect after successful submission
 
+    # Explicitly define the fields to be used in the form
+    fields = ['first_name', 'last_name', 'age','city','content','read_more','event_date','event_time','img_url','img_title','author','tags']  # List fields as needed
 
 class AddComment(CreateView):
     model = Comment

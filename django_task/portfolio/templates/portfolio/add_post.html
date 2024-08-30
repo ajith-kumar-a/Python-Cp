@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %} Home {% endblock %}
+
+
+{% block CssFilePage %}
+<link rel = 'stylesheet' href = {% static 'index.css' %} >
+<link rel = "icon" href ="/media/images/ak.jpg" >
+
+{% endblock %}
+
+{% block header %}
+  {% include  "portfolio/includes/header.html" %}
+{% endblock %}
+
+{% block content %}
+  <!-- Comment form -->
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.as_p }}  <!-- Render form fields -->
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

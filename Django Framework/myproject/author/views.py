@@ -46,7 +46,7 @@ def Author_details_slug(request,slug):
         return HttpResponse(responce_data)
     except:
         raise Http404
-
+ 
        
 def Author_details(request,author):
    
